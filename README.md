@@ -3,6 +3,7 @@
 Developer Performance Analytics Dashboard based on GitHub repository data, designed to provide insights into developer productivity and performance.
 
 Command to start the dashboard
+
 streamlit run .\streamlit_app.py
 
 GitRepoFetch.py 
