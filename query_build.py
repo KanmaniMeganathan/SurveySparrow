@@ -9,10 +9,8 @@ df = pd.read_csv('commits.csv')
 def build_query(author=None, startdate=None, enddate=None, keyword=None):
     global df
 
-    # Start with a mask that is True for all rows
     mask = pd.Series([True] * len(df), index=df.index)
     
-    # Apply conditions to the mask
     if author:
         mask &= (df['author'] == author)
     if startdate and enddate:
@@ -22,10 +20,8 @@ def build_query(author=None, startdate=None, enddate=None, keyword=None):
     elif enddate:
         mask &= (df['date'] <= enddate)
     
-    # Apply the mask to filter the DataFrame
     query_result = df[mask]
 
-    # Apply keyword filtering if specified
     if keyword:
         query_result = query_result[query_result['message'].str.contains(keyword, case=False)]
     
