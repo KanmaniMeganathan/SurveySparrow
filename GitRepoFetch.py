@@ -2,16 +2,11 @@ from github import Github
 import pandas as pd
 
 token ="your github token"
-# Authenticating with GitHub
 g = Github(token)
-
-# Fetch repository data
 repo = g.get_repo("scikit-learn/scikit-learn")
 
-# Example: Fetch commits data
 commits = repo.get_commits()
-print('\ncommits : ',type(commits))
-# Processing data into a pandas DataFrame
+
 commit_data = []
 for commit in commits:
     commit_data.append({
