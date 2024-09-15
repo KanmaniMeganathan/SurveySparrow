@@ -2,10 +2,8 @@ import openai
 import pandas as pd
 import streamlit as st
 
-# Set your OpenAI API key
 openai.api_key = "your_openai_api_key"
 
-# Function to generate Python query from natural language input
 def generate_query(input_text):
     # Modify the prompt to ensure the query uses 'df' as the DataFrame
     prompt = f"""
@@ -25,18 +23,14 @@ def generate_query(input_text):
 
 commit_df=pd.read_csv('commits.csv')
 
-# sample query
+
 #input_text = "give name of authors with frequency of commits more than 2000"
 st.title("Chat with me")
 input_text=st.text_input("Your Question",value='give name of authors with frequency of commits more than 2000')
-# Generate the Python query
-query = generate_query(input_text)
-print("Generated Python Query:\n", query)
 
-# Execute the generated query
+query = generate_query(input_text)
 exec(query)
 
-# In case the query stores the result in a variable like 'result_df'
 if 'result_df' in locals():
     print("Filtered DataFrame:\n", result_df)
 
