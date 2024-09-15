@@ -23,3 +23,13 @@ Dashboard code- this displays a plot with no of commits in range. It also has op
 
 Pages\sample_openaichat.py
 Connecting to GPT with prompt that inputs text from dashboard to convert it into a python query. Later the python query is executed on the commits data and ouptut is displayed.
+
+commits.csv
+Dataframe that contains all commits from scikit-learn/scikit-learn repo
+
+Pages\commit_frequency.csv
+Dataframe that contains author-wise frequency on no of commits
+
+Pages\commit_frequency_with_ranges.csv
+Dataframe that contains author's frequency of commit with range 
+
